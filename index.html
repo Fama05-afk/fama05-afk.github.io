@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fama Diallo — Data Scientist & ML Engineer</title>
+  <meta name="description" content="Fama Diallo — Data Scientist & ML Engineer. Master Modélisation Statistique, Bordeaux. Mobile toute la France.">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+
+/* ── VARS ── */
+:root {
+  --bg:        #ffffff;
+  --bg-2:      #f7f5f2;
+  --bg-card:   #ffffff;
+  --text:      #1a1a1a;
+  --text-2:    #555555;
+  --text-3:    #aaaaaa;
+  --border:    #e8e4de;
+  --border-2:  #d5d0c8;
+  --hero-bg:   #cfc9c0;
+  --tag-bg:    #f0ede8;
+  --tag-border:#e2ddd8;
+  --green:     #7d9b82;
+  --green-b:   #a8c4ab;
+  --shadow:    0 4px 20px rgba(0,0,0,.06);
+}
+[data-theme="dark"] {
+  --bg:        #141414;
+  --bg-2:      #1c1c1c;
+  --bg-card:   #1c1c1c;
+  --text:      #ede8e1;
+  --text-2:    #9a9080;
+  --text-3:    #4a4a4a;
+  --border:    #2a2a2a;
+  --border-2:  #3a3a3a;
+  --hero-bg:   #2a2520;
+  --tag-bg:    #232018;
+  --tag-border:#3a352a;
+  --shadow:    0 4px 20px rgba(0,0,0,.4);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background .3s, color .3s;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 62px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3.5rem;
+  background: rgba(20,20,20,.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  color: #fff;
+}
+.nav-brand {
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .28em; text-transform: uppercase;
+}
+.nav-links { display: flex; gap: .2rem; }
+.nav-links a {
+  font-size: .6rem; font-weight: 400;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  padding: .38rem .7rem; border-radius: 4px;
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #fff; background: rgba(255,255,255,.06);
+}
+.nav-right { display: flex; align-items: center; gap: .75rem; }
+.nav-cta {
+  font-size: .6rem; font-weight: 400;
+  letter-spacing: .18em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.25);
+  padding: .48rem 1.2rem; border-radius: 4px;
+  color: rgba(255,255,255,.65);
+  transition: all .2s;
+}
+.nav-cta:hover { color: #fff; border-color: rgba(255,255,255,.6); }
+.theme-btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.18);
+  background: transparent;
+  color: rgba(255,255,255,.55);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+.theme-btn:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+.theme-btn svg { width: 14px; height: 14px; fill: currentColor; }
+
+/* ── HERO ── */
+#home {
+  min-height: 100vh;
+  background: var(--hero-bg);
+  padding: 6rem 3.5rem 5rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  scroll-margin-top: 62px;
+}
+.hero-photo { flex-shrink: 0; position: relative; }
+.hero-photo-img {
+  width: 240px; height: 300px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+}
+.hero-photo-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+}
+.hero-available {
+  position: absolute; bottom: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: .3rem .9rem;
+  font-size: .56rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--green);
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  display: flex; align-items: center; gap: .4rem;
+}
+.available-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0;
+}
+.hero-text { flex: 1; }
+.hero-eyebrow {
+  font-size: .6rem; font-weight: 400;
+  letter-spacing: .36em; text-transform: uppercase;
+  color: rgba(26,26,26,.45);
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+[data-theme="dark"] .hero-eyebrow { color: rgba(237,232,225,.35); }
+.hero-eyebrow-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: currentColor; flex-shrink: 0;
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 300; line-height: 1.0;
+  color: var(--text); letter-spacing: -.02em;
+  margin-bottom: .6rem;
+}
+.hero-title {
+  font-size: .7rem; font-weight: 400;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(26,26,26,.5);
+  margin-bottom: 1.5rem;
+}
+[data-theme="dark"] .hero-title { color: rgba(237,232,225,.4); }
+.hero-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; color: var(--text-2);
+  line-height: 1.85; max-width: 500px;
+  margin-bottom: 2.25rem;
+}
+.hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.btn-dark {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: .6rem; font-weight: 400;
+  letter-spacing: .2em; text-transform: uppercase;
+  background: var(--text); color: var(--bg);
+  padding: .8rem 1.9rem; border-radius: 6px;
+  transition: opacity .2s;
+}
+.btn-dark:hover { opacity: .75; }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: .6rem; font-weight: 400;
+  letter-spacing: .2em; text-transform: uppercase;
+  border: 1px solid var(--border-2); color: var(--text);
+  padding: .8rem 1.9rem; border-radius: 6px;
+  transition: all .2s;
+}
+.btn-outline:hover { border-color: var(--text); }
+
+/* ── SECTION ── */
+section { scroll-margin-top: 62px; }
+.s-wrap { padding: 5.5rem 3.5rem; border-top: 1px solid var(--border); }
+.s-label {
+  font-size: .6rem; font-weight: 600;
+  letter-spacing: .36em; text-transform: uppercase;
+  color: var(--text-3);
+  display: block; margin-bottom: 3rem;
+}
+
+/* ── ABOUT ── */
+#about {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  min-height: 90vh;
+  border-top: 1px solid var(--border);
+}
+.about-photo {
+  overflow: hidden;
+  background: var(--border);
+  min-height: 500px;
+}
+.about-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+}
+.about-content {
+  padding: 5.5rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--bg);
+}
+.about-hello {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300; line-height: 1.15;
+  color: var(--text); margin: 2rem 0 1.75rem;
+}
+.about-hello em { font-style: italic; }
+.about-bio {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem; color: var(--text-2);
+  line-height: 1.88; margin-bottom: 1rem;
+}
+.about-bio strong { font-weight: 400; color: var(--text); }
+.about-pills {
+  display: flex; flex-wrap: wrap; gap: .45rem;
+  margin: 1.75rem 0 2rem;
+}
+.about-pill {
+  font-size: .56rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-2);
+  border: 1px solid var(--border);
+  padding: .25rem .7rem;
+}
+.about-links { display: flex; gap: .75rem; flex-wrap: wrap; }
+.about-link {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text); border-bottom: 1px solid var(--text);
+  padding-bottom: 2px; transition: opacity .2s;
+}
+.about-link:hover { opacity: .45; }
+.cv-link {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--bg); background: var(--text);
+  padding: .55rem 1.2rem; border-radius: 4px;
+  transition: opacity .2s;
+}
+.cv-link:hover { opacity: .75; }
+.cv-link svg { width: 12px; height: 12px; fill: currentColor; }
+
+/* ── PROFIL CARDS ── */
+#profil { background: var(--bg-2); }
+.profil-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.p-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.25rem 2rem;
+  transition: box-shadow .25s, border-color .25s;
+}
+.p-card:hover { box-shadow: var(--shadow); border-color: var(--border-2); }
+.p-card-icon {
+  width: 32px; height: 32px;
+  margin-bottom: 1.15rem;
+  color: var(--text-3);
+}
+.p-card-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.p-title {
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text); margin-bottom: 1rem;
+}
+.p-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem; color: var(--text-2); line-height: 1.85;
+}
+.p-text strong { font-weight: 400; color: var(--text); }
+.skill-tags { display: flex; flex-wrap: wrap; gap: .38rem; }
+.skill-tag {
+  font-size: .6rem; font-weight: 300;
+  color: var(--text-2);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  padding: .28rem .65rem; border-radius: 4px;
+}
+.skills-2x2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+}
+
+/* ── EXPERIENCE ── */
+#experience { background: var(--bg); }
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 2rem;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.exp-item:first-of-type { border-top: 1px solid var(--border); }
+.exp-date {
+  font-size: .58rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--text-3);
+  padding-top: .2rem;
+}
+.exp-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 400;
+  color: var(--text); margin-bottom: .2rem; line-height: 1.3;
+}
+.exp-org {
+  font-size: .58rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: .9rem;
+}
+.exp-ul { list-style: none; display: flex; flex-direction: column; gap: .38rem; }
+.exp-ul li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .97rem; color: var(--text-2);
+  line-height: 1.68; padding-left: .9rem; position: relative;
+}
+.exp-ul li::before { content: '—'; position: absolute; left: 0; color: var(--border-2); }
+.exp-ul li strong { font-weight: 400; color: var(--text); }
+.exp-tags { display: flex; flex-wrap: wrap; gap: .28rem; margin-top: .9rem; }
+.exp-tag {
+  font-size: .54rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-3); border: 1px solid var(--border); padding: .17rem .45rem;
+}
+.exp-badge {
+  font-size: .56rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--green); border: 1px solid var(--green-b);
+  padding: .35rem .8rem; height: fit-content; white-space: nowrap;
+  border-radius: 4px;
+}
+
+/* ── PORTFOLIO ── */
+#portfolio { background: var(--bg-2); }
+.pf-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;
+}
+.filter-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.filter-btn {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: .6rem; font-weight: 400;
+  letter-spacing: .2em; text-transform: uppercase;
+  background: none; border: none; cursor: pointer;
+  color: var(--text-3); padding-bottom: 3px;
+  border-bottom: 1px solid transparent; transition: color .2s;
+}
+.filter-btn:hover { color: var(--text); }
+.filter-btn.active { color: var(--text); border-bottom-color: var(--text); }
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1px; background: var(--border);
+}
+.pf-card { background: var(--bg); overflow: hidden; transition: box-shadow .25s; }
+.pf-card:hover { box-shadow: var(--shadow); position: relative; z-index: 1; }
+.pf-card.hidden { display: none; }
+.pf-img {
+  aspect-ratio: 16/9; background: var(--bg-2);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: .5rem;
+  overflow: hidden; transition: background .3s;
+}
+.pf-card:hover .pf-img { background: var(--border); }
+.pf-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.pf-card:hover .pf-img img { transform: scale(1.04); }
+.pf-img-placeholder {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: .6rem;
+  width: 100%; height: 100%;
+}
+.pf-img-placeholder svg {
+  width: 28px; height: 28px;
+  stroke: var(--border-2); fill: none; stroke-width: 1.5;
+  opacity: .6;
+}
+.pf-body { padding: 1.4rem 1.6rem 1.75rem; }
+.pf-cat {
+  font-size: .56rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: .38rem;
+}
+.pf-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 400;
+  color: var(--text); line-height: 1.3; margin-bottom: .45rem;
+}
+.pf-metrics {
+  font-size: .58rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--green); margin-bottom: .8rem;
+}
+.pf-tags { display: flex; flex-wrap: wrap; gap: .28rem; margin-bottom: 1.1rem; }
+.pf-tag {
+  font-size: .54rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-3); border: 1px solid var(--border); padding: .17rem .44rem;
+}
+.pf-link {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text); border-bottom: 1px solid var(--text);
+  padding-bottom: 2px; transition: opacity .2s;
+}
+.pf-link:hover { opacity: .45; }
+
+/* ── EXPERTISE ── */
+#expertise { background: var(--bg); }
+.kw-list { display: flex; flex-wrap: wrap; gap: .6rem 0; }
+.kw {
+  font-size: .6rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--text-2);
+  padding-right: 1.2rem; position: relative;
+}
+.kw::after { content: '·'; position: absolute; right: .45rem; color: var(--border-2); }
+.kw:last-child::after { display: none; }
+
+/* ── CONTACT ── */
+#contact {
+  background: #141414;
+  padding: 5.5rem 3.5rem;
+  border-top: 1px solid #222;
+}
+[data-theme="dark"] #contact { background: #0e0e0e; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; max-width: 900px;
+}
+.contact-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 300; font-style: italic;
+  color: #fff; line-height: 1.15; margin-bottom: 1.25rem;
+}
+.contact-left p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem; color: rgba(255,255,255,.42); line-height: 1.85;
+}
+.contact-links { display: flex; flex-direction: column; }
+.contact-row {
+  display: flex; flex-direction: column; gap: .18rem;
+  padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: opacity .2s;
+}
+.contact-row:first-child { padding-top: 0; }
+.contact-row:last-child { border-bottom: none; }
+a.contact-row:hover { opacity: .55; }
+.cr-label {
+  font-size: .52rem; letter-spacing: .24em;
+  text-transform: uppercase; color: rgba(255,255,255,.28);
+}
+.cr-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; color: #fff;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #0e0e0e;
+  padding: 1.5rem 3.5rem;
+  border-top: 1px solid rgba(255,255,255,.05);
+  display: flex; justify-content: space-between; align-items: center;
+}
+footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.22); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: .56rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); transition: color .2s; }
+.footer-links a:hover { color: rgba(255,255,255,.7); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  #home { gap: 3.5rem; padding: 4.5rem 2.5rem 4rem; }
+  .hero-photo-img { width: 200px; height: 250px; }
+  #about { grid-template-columns: 1fr; }
+  .about-photo { min-height: 360px; }
+  .about-content { padding: 4rem 2.5rem; }
+  .profil-grid { grid-template-columns: 1fr; }
+  .skills-2x2 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  #home { flex-direction: column; text-align: center; align-items: center; padding: 5rem 1.5rem 3.5rem; min-height: auto; }
+  .hero-actions { justify-content: center; }
+  .s-wrap { padding: 4rem 1.5rem; }
+  .pf-grid { grid-template-columns: 1fr; }
+  .skills-2x2 { grid-template-columns: 1fr; }
+  .exp-item { grid-template-columns: 1fr; gap: .6rem; }
+  .exp-badge { display: none; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  #contact { padding: 4rem 1.5rem; }
+  footer { padding: 1.25rem 1.5rem; }
+}
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#home" class="nav-brand">Fama Diallo</a>
+  <div class="nav-links">
+    <a href="#home">Accueil</a>
+    <a href="#about">À propos</a>
+    <a href="#profil">Compétences</a>
+    <a href="#portfolio">Projets</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta">Me contacter</a>
+    <button class="theme-btn" id="theme-btn" title="Changer de thème">
+      <svg id="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg id="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-photo">
+    <div class="hero-photo-img">
+      <img src="assets/img/photo.jpg" alt="Fama Diallo">
+    </div>
+    <span class="hero-available">
+      <span class="available-dot"></span>
+      Disponible
+    </span>
+  </div>
+
+  <div class="hero-text">
+    <p class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      En recherche d'opportunités · Mobile toute la France
+      <span class="hero-eyebrow-dot"></span>
+    </p>
+    <h1 class="hero-name">Fama Diallo</h1>
+    <p class="hero-title">Data Scientist &amp; ML Engineer</p>
+    <p class="hero-desc">
+      Diplômée d'un Master en Modélisation Statistique — Université de Bordeaux. Spécialisée en IA générative, Computer Vision et MLOps.
+    </p>
+    <div class="hero-actions">
+      <a href="#about" class="btn-dark">À propos de moi &rarr;</a>
+      <a href="#portfolio" class="btn-outline">Mes projets</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-photo">
+    <img src="assets/img/photo.jpg" alt="Fama Diallo">
+  </div>
+  <div class="about-content">
+    <span class="s-label">À propos</span>
+    <h2 class="about-hello">
+      Je suis Fama Diallo,<br>
+      <em>Data Scientist junior.</em>
+    </h2>
+    <p class="about-bio">
+      Diplômée d'un Master en Modélisation Statistique et Stochastique — Université de Bordeaux. Je conçois des systèmes ML de la recherche à la production, avec une spécialisation en IA générative, Computer Vision et MLOps.
+    </p>
+    <p class="about-bio">
+      Mon stage chez Tiama / Kestrel Vision m'a permis d'implémenter des modèles GAN et de diffusion pour la vision industrielle, résultats validés en tests client. Classée <strong>1ère sur 19 stagiaires</strong>.
+    </p>
+    <p class="about-bio">
+      Rigoureuse, curieuse et orientée résultats. Je cherche un premier poste où contribuer pleinement. <strong>Mobile toute la France.</strong>
+    </p>
+    <div class="about-pills">
+      <span class="about-pill">Master · Modélisation Statistique</span>
+      <span class="about-pill">Université de Bordeaux</span>
+      <span class="about-pill">Anglais B2</span>
+      <span class="about-pill">Mobile · Toute la France</span>
+    </div>
+    <div class="about-links">
+      <a href="#portfolio" class="about-link">Voir mes projets &rarr;</a>
+      <a href="assets/cv/CV_Fama_Diallo.pdf" download class="cv-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Télécharger mon CV
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROFIL CARDS -->
+<section id="profil">
+  <div class="s-wrap">
+    <span class="s-label">Profil &amp; Compétences</span>
+    <div class="profil-grid">
+
+      <div class="p-card">
+        <div class="p-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <p class="p-title">Background</p>
+        <p class="p-text">
+          Data Scientist diplômée d'un Master en Modélisation Statistique et Stochastique — Université de Bordeaux. Spécialisée en ML, Deep Learning et Computer Vision.
+          <br><br>
+          Stage chez Tiama / Kestrel Vision : GAN et modèles de diffusion pour la vision industrielle. Classée <strong>1ère sur 19 stagiaires</strong>.
+          <br><br>
+          Rigoureuse, curieuse, orientée résultats. <strong>Mobile toute la France.</strong>
+        </p>
+      </div>
+
+      <div class="skills-2x2">
+        <div class="p-card">
+          <div class="p-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <p class="p-title">IA &amp; Deep Learning</p>
+          <div class="skill-tags">
+            <span class="skill-tag">GAN</span><span class="skill-tag">Diffusion Models</span>
+            <span class="skill-tag">BERT</span><span class="skill-tag">LSTM · GRU</span>
+            <span class="skill-tag">ResNet · EfficientNet</span><span class="skill-tag">Transfer Learning</span>
+          </div>
+        </div>
+        <div class="p-card">
+          <div class="p-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <p class="p-title">MLOps &amp; Production</p>
+          <div class="skill-tags">
+            <span class="skill-tag">MLflow</span><span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Docker</span><span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Optuna</span><span class="skill-tag">Azure DevOps</span>
+          </div>
+        </div>
+        <div class="p-card">
+          <div class="p-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <p class="p-title">Computer Vision &amp; NLP</p>
+          <div class="skill-tags">
+            <span class="skill-tag">OpenCV</span><span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">HuggingFace</span><span class="skill-tag">Transformers</span>
+            <span class="skill-tag">TensorBoard</span><span class="skill-tag">t-SNE</span>
+          </div>
+        </div>
+        <div class="p-card">
+          <div class="p-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <p class="p-title">Data &amp; Visualisation</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Python · R · SQL</span>
+            <span class="skill-tag">Power BI</span><span class="skill-tag">Plotly</span>
+            <span class="skill-tag">BigQuery · GCP</span><span class="skill-tag">dbt</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="#portfolio" class="btn-outline">Voir mes projets &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPÉRIENCE -->
+<section id="experience">
+  <div class="s-wrap">
+    <span class="s-label">Expérience</span>
+
+    <div class="exp-item">
+      <span class="exp-date">Mars – Août 2025</span>
+      <div class="exp-body">
+        <h3>Stage de fin d'études — Computer Vision &amp; Generative AI</h3>
+        <p class="exp-org">Tiama / Kestrel Vision · Division IA · Île-de-France</p>
+        <ul class="exp-ul">
+          <li>Génération synthétique d'images de défauts industriels rares — enrichissement dataset <strong>+58%</strong></li>
+          <li>GAN (inpainting) vs modèle de diffusion — pipeline POC → stabilisation → Optuna → production</li>
+          <li>Résultats : <strong>PSNR +67%</strong>, <strong>FID −94%</strong>, <strong>MAE −98%</strong> · validation t-SNE · intégré en production</li>
+          <li>Environnement Scrum · TensorBoard · Azure DevOps</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">PyTorch</span><span class="exp-tag">GAN</span>
+          <span class="exp-tag">Diffusion Models</span><span class="exp-tag">Optuna</span>
+          <span class="exp-tag">OpenCV</span><span class="exp-tag">TensorBoard</span><span class="exp-tag">Azure DevOps</span>
+        </div>
+      </div>
+      <span class="exp-badge">1ère / 19 stagiaires</span>
+    </div>
+
+    <div class="exp-item">
+      <span class="exp-date">Oct. 2023 – Jan. 2024</span>
+      <div class="exp-body">
+        <h3>Stage en Analyse de Données</h3>
+        <p class="exp-org">Ayor Water and Heating Solutions · Marsac</p>
+        <ul class="exp-ul">
+          <li>Analyse données clients, ventes et commandes — séries temporelles, tendances</li>
+          <li>Segmentation K-Means · modélisation prédictive (Random Forest, régression logistique)</li>
+          <li>Déploiement de tableaux de bord Power BI pour le suivi des KPIs</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Python</span><span class="exp-tag">pandas</span>
+          <span class="exp-tag">scikit-learn</span><span class="exp-tag">SQL</span>
+          <span class="exp-tag">Power BI</span><span class="exp-tag">HubSpot CRM</span>
+        </div>
+      </div>
+      <span></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="s-wrap">
+    <div class="pf-header">
+      <span class="s-label" style="margin-bottom:0">Projets</span>
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="mlops">MLOps</button>
+        <button class="filter-btn" data-filter="vision">Vision</button>
+        <button class="filter-btn" data-filter="nlp">NLP</button>
+        <button class="filter-btn" data-filter="recsys">RecSys</button>
+        <button class="filter-btn" data-filter="stats">Stats</button>
+      </div>
+    </div>
+
+    <div class="pf-grid">
+
+      <div class="pf-card" data-cat="mlops recsys">
+        <div class="pf-img">
+          <div class="pf-img-placeholder">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+        </div>
+        <div class="pf-body">
+          <p class="pf-cat">MLOps · RecSys · Projet personnel</p>
+          <h3 class="pf-name">Pipeline MLOps — Recommandation e-commerce (Instacart)</h3>
+          <p class="pf-metrics">ALS meilleur modèle · Hit Rate @10 : 13.3% → 16.2% (+22%)</p>
+          <div class="pf-tags">
+            <span class="pf-tag">Python</span><span class="pf-tag">ALS · BPR · EASE</span>
+            <span class="pf-tag">MLflow</span><span class="pf-tag">FastAPI</span>
+            <span class="pf-tag">Streamlit</span><span class="pf-tag">Docker</span><span class="pf-tag">Optuna</span>
+          </div>
+          <a href="https://github.com/Fama05-afk/instacart-recsys" target="_blank" class="pf-link">Code source &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pf-card" data-cat="vision">
+        <div class="pf-img">
+          <div class="pf-img-placeholder">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+        </div>
+        <div class="pf-body">
+          <p class="pf-cat">Computer Vision · Transfer Learning · Projet académique</p>
+          <h3 class="pf-name">Détection d'éoliennes par imagerie satellite</h3>
+          <p class="pf-metrics">CNN scratch 95.7% → ResNet50 fine-tuné 98%</p>
+          <div class="pf-tags">
+            <span class="pf-tag">PyTorch</span><span class="pf-tag">ResNet50</span>
+            <span class="pf-tag">EfficientNetB3</span><span class="pf-tag">MobileNetV2</span><span class="pf-tag">OpenCV</span>
+          </div>
+          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pf-card" data-cat="nlp">
+        <div class="pf-img">
+          <div class="pf-img-placeholder">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+        </div>
+        <div class="pf-body">
+          <p class="pf-cat">NLP · Deep Learning · Projet académique</p>
+          <h3 class="pf-name">Classification de texte — RNN / LSTM / GRU</h3>
+          <p class="pf-metrics">AG_NEWS · 4 catégories · Comparaison architectures</p>
+          <div class="pf-tags">
+            <span class="pf-tag">PyTorch</span><span class="pf-tag">RNN</span>
+            <span class="pf-tag">LSTM</span><span class="pf-tag">GRU</span>
+          </div>
+          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pf-card" data-cat="stats">
+        <div class="pf-img">
+          <div class="pf-img-placeholder">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+        </div>
+        <div class="pf-body">
+          <p class="pf-cat">Stats · Graphes · Projet académique</p>
+          <h3 class="pf-name">Inférence de réseaux entre stations météorologiques</h3>
+          <p class="pf-metrics">262 stations · Graphical LASSO · Communautés Louvain</p>
+          <div class="pf-tags">
+            <span class="pf-tag">R</span><span class="pf-tag">igraph</span>
+            <span class="pf-tag">GLASSO</span><span class="pf-tag">ggplot2</span><span class="pf-tag">leaflet</span>
+          </div>
+          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pf-card" data-cat="recsys">
+        <div class="pf-img">
+          <div class="pf-img-placeholder">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+        </div>
+        <div class="pf-body">
+          <p class="pf-cat">RecSys · Compétition</p>
+          <h3 class="pf-name">Carrefour AI Challenge — Recommandation</h3>
+          <p class="pf-metrics">Hit Rate @10 : 0.377 · Double approche</p>
+          <div class="pf-tags">
+            <span class="pf-tag">Python</span><span class="pf-tag">PyTorch</span>
+            <span class="pf-tag">Filtrage collaboratif</span><span class="pf-tag">Pandas</span>
+          </div>
+          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="s-wrap">
+    <span class="s-label">Stack technique</span>
+    <div class="kw-list">
+      <span class="kw">Python</span><span class="kw">PyTorch</span><span class="kw">TensorFlow</span>
+      <span class="kw">scikit-learn</span><span class="kw">LightGBM</span>
+      <span class="kw">GAN</span><span class="kw">Diffusion Models</span>
+      <span class="kw">OpenCV</span><span class="kw">ResNet · EfficientNet</span>
+      <span class="kw">HuggingFace Transformers</span><span class="kw">BERT</span>
+      <span class="kw">LSTM · GRU</span><span class="kw">MLflow</span>
+      <span class="kw">FastAPI</span><span class="kw">Docker</span>
+      <span class="kw">Streamlit</span><span class="kw">Optuna</span>
+      <span class="kw">TensorBoard</span><span class="kw">Azure DevOps</span>
+      <span class="kw">SQL · BigQuery · GCP</span><span class="kw">dbt</span>
+      <span class="kw">Power BI</span><span class="kw">Plotly</span>
+      <span class="kw">R</span><span class="kw">NumPy · SciPy · Pandas</span>
+      <span class="kw">Modélisation stochastique</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <h2>Travaillons<br>ensemble.</h2>
+      <p>Ouverte aux opportunités en Data Science et ML Engineering. Mobile toute la France.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:famadiallodf@gmail.com" class="contact-row">
+        <span class="cr-label">Email</span>
+        <span class="cr-val">famadiallodf@gmail.com</span>
+      </a>
+      <a href="https://linkedin.com/in/fama-diallo" target="_blank" class="contact-row">
+        <span class="cr-label">LinkedIn</span>
+        <span class="cr-val">linkedin.com/in/fama-diallo</span>
+      </a>
+      <a href="https://github.com/Fama05-afk" target="_blank" class="contact-row">
+        <span class="cr-label">GitHub</span>
+        <span class="cr-val">github.com/Fama05-afk</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Fama Diallo</span>
+  <div class="footer-links">
+    <a href="#about">À propos</a>
+    <a href="#portfolio">Projets</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', t);
+})();
+
+const btn = document.getElementById('theme-btn');
+const moon = document.getElementById('icon-moon');
+const sun  = document.getElementById('icon-sun');
+
+function updateThemeIcon() {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  moon.style.display = dark ? 'none' : 'block';
+  sun.style.display  = dark ? 'block' : 'none';
+}
+updateThemeIcon();
+
+btn.addEventListener('click', () => {
+  const cur  = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  updateThemeIcon();
+});
+
+/* Active nav on scroll */
+const sections = document.querySelectorAll('section[id]');
+const links    = document.querySelectorAll('.nav-links a');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(a => a.classList.remove('active'));
+      const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { threshold: 0.35 });
+sections.forEach(s => io.observe(s));
+
+/* Portfolio filter */
+document.querySelectorAll('.filter-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.filter;
+    document.querySelectorAll('.pf-card[data-cat]').forEach(c => {
+      c.classList.toggle('hidden', f !== 'all' && !c.dataset.cat.split(' ').includes(f));
+    });
+  });
+});
+</script>
+</body>
+</html>

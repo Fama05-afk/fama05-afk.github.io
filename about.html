@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — Fama Diallo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Fama Diallo</a>
+  <div class="nav-center">
+    <a href="index.html">Accueil</a>
+    <a href="about.html" class="active">À propos</a>
+    <a href="projects.html">Projets</a>
+  </div>
+  <div class="nav-right">
+    <a href="#contact" class="btn-nav">Me contacter</a>
+    <button class="theme-toggle" id="theme-toggle"></button>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- HERO -->
+  <div class="about-hero">
+    <div class="about-photo-round">
+      <img src="assets/img/photo.jpg" alt="Fama Diallo">
+    </div>
+    <div class="about-hero-info">
+      <h1 class="about-hero-name">Fama Diallo</h1>
+      <p class="about-hero-title">Data Scientist &amp; ML Engineer &nbsp;|&nbsp; Master Modélisation Statistique · Bordeaux</p>
+      <div class="about-badges">
+        <span class="about-badge green"><span class="dot"></span>Disponible</span>
+        <span class="about-badge">Mobile · Toute la France</span>
+        <span class="about-badge">IA Générative</span>
+        <span class="about-badge">Computer Vision</span>
+        <span class="about-badge">MLOps</span>
+        <span class="about-badge">Anglais B2</span>
+      </div>
+      <p class="about-summary">
+        Data Scientist diplômée d'un Master en Modélisation Statistique et Stochastique, spécialisée en Machine Learning, Deep Learning et Computer Vision. Expérience en modèles génératifs pour la vision industrielle et mise en production de pipelines ML complets.
+      </p>
+    </div>
+  </div>
+
+  <!-- RÉSUMÉ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="s-label">Résumé professionnel</span>
+    </div>
+    <div style="max-width: 780px;">
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--text-2); line-height:1.9; margin-bottom:1.25rem;">
+        Data Scientist junior avec une formation solide en modélisation statistique et stochastique, et une spécialisation pratique acquise lors de mon stage de fin d'études chez Tiama / Kestrel Vision (Division IA).
+      </p>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--text-2); line-height:1.9; margin-bottom:1.25rem;">
+        J'ai implémenté et comparé des approches GAN et Diffusion pour la génération synthétique d'images de défauts industriels, aboutissant à un enrichissement du dataset de +58% et des résultats validés en tests client (PSNR +67%, FID &minus;94%, MAE &minus;98%). Classée 1ère sur 19 stagiaires.
+      </p>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--text-2); line-height:1.9;">
+        Je maîtrise un stack MLOps complet (MLflow, FastAPI, Docker, Optuna) et j'ai mené des projets allant du traitement de données en R pour l'inférence de réseaux météorologiques, à l'implémentation de systèmes de recommandation ALS/BPR/EASE sur 32 millions de transactions. Rigoureuse et orientée résultats — je cherche à rejoindre une équipe où apprendre et contribuer pleinement.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="section" style="background: var(--bg-2);">
+    <div class="section-head">
+      <span class="s-label">Compétences &amp; Expertise</span>
+    </div>
+    <div class="profil-layout">
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <p class="card-title">IA &amp; Deep Learning</p>
+        <div class="skill-tags">
+          <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">GAN</span><span class="skill-tag">Diffusion Models</span>
+          <span class="skill-tag">BERT</span><span class="skill-tag">LSTM · GRU</span>
+          <span class="skill-tag">ResNet · EfficientNet</span><span class="skill-tag">Transfer Learning</span>
+          <span class="skill-tag">scikit-learn</span><span class="skill-tag">LightGBM</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <p class="card-title">MLOps &amp; Production</p>
+        <div class="skill-tags">
+          <span class="skill-tag">MLflow</span><span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Docker</span><span class="skill-tag">Streamlit</span>
+          <span class="skill-tag">Optuna</span><span class="skill-tag">TensorBoard</span>
+          <span class="skill-tag">Azure DevOps</span><span class="skill-tag">Git · GitHub</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <p class="card-title">Computer Vision &amp; NLP</p>
+        <div class="skill-tags">
+          <span class="skill-tag">OpenCV</span><span class="skill-tag">HuggingFace</span>
+          <span class="skill-tag">Transformers</span><span class="skill-tag">t-SNE</span>
+          <span class="skill-tag">Segmentation</span><span class="skill-tag">Detection</span>
+          <span class="skill-tag">Inpainting</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <p class="card-title">Data &amp; Visualisation</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Python · R · SQL</span>
+          <span class="skill-tag">Pandas · NumPy</span>
+          <span class="skill-tag">Power BI</span><span class="skill-tag">Plotly</span>
+          <span class="skill-tag">BigQuery · GCP</span><span class="skill-tag">dbt</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPÉRIENCE -->
+  <section class="section">
+    <div class="section-head">
+      <span class="s-label">Expérience Professionnelle</span>
+    </div>
+
+    <div class="exp-item">
+      <span class="exp-date">Mars – Août 2025</span>
+      <div class="exp-body">
+        <h3>Stage de fin d'études — Computer Vision &amp; Generative AI</h3>
+        <p class="exp-org">Tiama / Kestrel Vision · Division IA · Île-de-France</p>
+        <ul class="exp-ul">
+          <li>Génération synthétique d'images de défauts industriels rares — enrichissement dataset <strong>+58%</strong></li>
+          <li>GAN (inpainting) vs modèle de diffusion — pipeline POC → stabilisation → Optuna → production</li>
+          <li>Résultats : <strong>PSNR +67%</strong>, <strong>FID &minus;94%</strong>, <strong>MAE &minus;98%</strong> · validation t-SNE · intégré en production</li>
+          <li>Environnement Scrum · TensorBoard · Azure DevOps</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">PyTorch</span><span class="exp-tag">GAN</span>
+          <span class="exp-tag">Diffusion Models</span><span class="exp-tag">Optuna</span>
+          <span class="exp-tag">OpenCV</span><span class="exp-tag">TensorBoard</span>
+          <span class="exp-tag">Azure DevOps</span>
+        </div>
+      </div>
+      <span class="exp-badge">1ère / 19 stagiaires</span>
+    </div>
+
+    <div class="exp-item">
+      <span class="exp-date">Oct. 2023 – Jan. 2024</span>
+      <div class="exp-body">
+        <h3>Stage en Analyse de Données</h3>
+        <p class="exp-org">Ayor Water and Heating Solutions · Marsac</p>
+        <ul class="exp-ul">
+          <li>Analyse données clients, ventes et commandes — séries temporelles, tendances</li>
+          <li>Segmentation K-Means · modélisation prédictive (Random Forest, régression logistique)</li>
+          <li>Déploiement de tableaux de bord Power BI pour le suivi des KPIs</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Python</span><span class="exp-tag">pandas</span>
+          <span class="exp-tag">scikit-learn</span><span class="exp-tag">SQL</span>
+          <span class="exp-tag">Power BI</span><span class="exp-tag">HubSpot CRM</span>
+        </div>
+      </div>
+      <span></span>
+    </div>
+
+  </section>
+
+  <!-- FORMATION -->
+  <section class="section" style="background: var(--bg-2);">
+    <div class="section-head">
+      <span class="s-label">Formation</span>
+    </div>
+    <div class="edu-item">
+      <p class="edu-school">Université de Bordeaux</p>
+      <p class="edu-degree">Master Modélisation Statistique et Stochastique</p>
+      <p class="edu-date">2023 – 2025</p>
+    </div>
+    <div class="edu-item">
+      <p class="edu-school">Université de Bordeaux</p>
+      <p class="edu-degree">Licence Mathématiques et Applications</p>
+      <p class="edu-date">2020 – 2023</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="s-label">Certifications</span>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <p class="cert-name">CS50's Introduction to Artificial Intelligence with Python</p>
+        <p class="cert-issuer">Harvard · edX</p>
+      </div>
+      <div class="cert-card">
+        <p class="cert-name">TensorFlow Developer Certificate 2023: Zero to Mastery</p>
+        <p class="cert-issuer">Zero to Mastery Academy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" style="background:#141414; border-top:1px solid #222;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; max-width:900px;">
+      <div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,3rem); font-weight:300; font-style:italic; color:#fff; line-height:1.15; margin-bottom:1.25rem;">Travaillons<br>ensemble.</h2>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.02rem; color:rgba(255,255,255,.42); line-height:1.85;">Ouverte aux opportunités en Data Science et ML Engineering. Mobile toute la France.</p>
+      </div>
+      <div style="display:flex; flex-direction:column;">
+        <a href="mailto:famadiallodf@gmail.com" style="display:flex;flex-direction:column;gap:.18rem;padding:1.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);transition:opacity .2s;" onmouseover="this.style.opacity='.55'" onmouseout="this.style.opacity='1'">
+          <span style="font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.28);">Email</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#fff;">famadiallodf@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/fama-diallo" target="_blank" style="display:flex;flex-direction:column;gap:.18rem;padding:1.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);transition:opacity .2s;" onmouseover="this.style.opacity='.55'" onmouseout="this.style.opacity='1'">
+          <span style="font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.28);">LinkedIn</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#fff;">linkedin.com/in/fama-diallo</span>
+        </a>
+        <a href="https://github.com/Fama05-afk" target="_blank" style="display:flex;flex-direction:column;gap:.18rem;padding:1.4rem 0;transition:opacity .2s;" onmouseover="this.style.opacity='.55'" onmouseout="this.style.opacity='1'">
+          <span style="font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.28);">GitHub</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#fff;">github.com/Fama05-afk</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; 2026 Fama Diallo</span>
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="projects.html">Projets</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

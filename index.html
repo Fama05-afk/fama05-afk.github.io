@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fama Diallo — Data Scientist & ML Engineer</title>
-  <meta name="description" content="Fama Diallo — Data Scientist & ML Engineer. Master Modélisation Statistique, Bordeaux. Mobile toute la France.">
+  <title>Fama Diallo · Data Scientist, ML Engineer & IA</title>
+  <meta name="description" content="Fama Diallo · Data Scientist, ML Engineer & IA. Master Modélisation Statistique, Bordeaux. Mobile toute la France.">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
   <style>
 
@@ -208,18 +208,24 @@ section { scroll-margin-top: 62px; }
 /* ── ABOUT ── */
 #about {
   display: grid;
-  grid-template-columns: 5fr 6fr;
+  grid-template-columns: 1fr 1fr;
   min-height: 90vh;
   border-top: 1px solid var(--border);
 }
 .about-photo {
   overflow: hidden;
-  background: var(--border);
-  min-height: 500px;
+  background: #cfc9c0;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .about-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .about-content {
   padding: 5.5rem 5rem;
@@ -387,7 +393,7 @@ section { scroll-margin-top: 62px; }
   overflow: hidden; transition: background .3s;
 }
 .pf-card:hover .pf-img { background: var(--border); }
-.pf-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.pf-img img { width: 100%; height: 100%; object-fit: contain; background: var(--bg); transition: transform .5s; }
 .pf-card:hover .pf-img img { transform: scale(1.04); }
 .pf-img-placeholder {
   display: flex; flex-direction: column;
@@ -408,6 +414,11 @@ section { scroll-margin-top: 62px; }
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem; font-weight: 400;
   color: var(--text); line-height: 1.3; margin-bottom: .45rem;
+}
+.pf-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .93rem; color: var(--text-2);
+  line-height: 1.7; margin-bottom: .6rem;
 }
 .pf-metrics {
   font-size: .58rem; letter-spacing: .14em;
@@ -553,9 +564,9 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
       <span class="hero-eyebrow-dot"></span>
     </p>
     <h1 class="hero-name">Fama Diallo</h1>
-    <p class="hero-title">Data Scientist &amp; ML Engineer</p>
+    <p class="hero-title">Data Scientist · ML Engineer · IA</p>
     <p class="hero-desc">
-      Diplômée d'un Master en Modélisation Statistique — Université de Bordeaux. Spécialisée en IA générative, Computer Vision et MLOps.
+      Master en Mathématiques Appliquées, Université de Bordeaux. Curieuse des systèmes, des données et de ce qu'on peut en faire.
     </p>
     <div class="hero-actions">
       <a href="#about" class="btn-dark">À propos de moi &rarr;</a>
@@ -567,22 +578,22 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
 <!-- ABOUT -->
 <section id="about">
   <div class="about-photo">
-    <img src="assets/img/photo.jpg" alt="Fama Diallo">
+    <img src="assets/img/about-bg.png" alt="Courbes d'entraînement">
   </div>
   <div class="about-content">
     <span class="s-label">À propos</span>
     <h2 class="about-hello">
-      Je suis Fama Diallo,<br>
-      <em>Data Scientist junior.</em>
+      Je construis des systèmes<br>
+      <em>rigoureux, de la modélisation au déploiement.</em>
     </h2>
     <p class="about-bio">
-      Diplômée d'un Master en Modélisation Statistique et Stochastique — Université de Bordeaux. Je conçois des systèmes ML de la recherche à la production, avec une spécialisation en IA générative, Computer Vision et MLOps.
+      Ce qui m'attire dans la data science, c'est la rigueur qu'elle exige : comprendre avant de coder, défendre chaque choix technique, mesurer chaque résultat. Je ne considère un projet terminé que lorsqu'il est explicable autant que fonctionnel.
     </p>
     <p class="about-bio">
-      Mon stage chez Tiama / Kestrel Vision m'a permis d'implémenter des modèles GAN et de diffusion pour la vision industrielle, résultats validés en tests client. Classée <strong>1ère sur 19 stagiaires</strong>.
+      Mon stage chez Tiama / Kestrel Vision a été formateur à ce titre : construire un pipeline d'images synthétiques, l'optimiser, et le voir validé. Les résultats : <strong>PSNR +67%, FID &minus;94%, MAE &minus;98%</strong>.
     </p>
     <p class="about-bio">
-      Rigoureuse, curieuse et orientée résultats. Je cherche un premier poste où contribuer pleinement. <strong>Mobile toute la France.</strong>
+      Aujourd'hui je cherche un environnement où continuer à apprendre et contribuer pleinement. <strong>Mobile toute la France.</strong>
     </p>
     <div class="about-pills">
       <span class="about-pill">Master · Modélisation Statistique</span>
@@ -608,15 +619,15 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
 
       <div class="p-card">
         <div class="p-card-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <p class="p-title">Background</p>
+        <p class="p-title">Démarche</p>
         <p class="p-text">
-          Data Scientist diplômée d'un Master en Modélisation Statistique et Stochastique — Université de Bordeaux. Spécialisée en ML, Deep Learning et Computer Vision.
+          Comprendre avant de coder. Défendre chaque choix. Mesurer chaque résultat.
           <br><br>
-          Stage chez Tiama / Kestrel Vision : GAN et modèles de diffusion pour la vision industrielle. Classée <strong>1ère sur 19 stagiaires</strong>.
+          Je construis des projets de bout en bout, du traitement des données à la mise en production, avec une attention constante à la validation rigoureuse des modèles (cross-validation, train/test split, K-Fold), à la reproductibilité et à l'explicabilité.
           <br><br>
-          Rigoureuse, curieuse, orientée résultats. <strong>Mobile toute la France.</strong>
+          Habituée aux environnements Agile et aux revues de code, j'attache autant d'importance à la <strong>qualité du processus</strong> qu'aux métriques finales.
         </p>
       </div>
 
@@ -630,6 +641,7 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
             <span class="skill-tag">GAN</span><span class="skill-tag">Diffusion Models</span>
             <span class="skill-tag">BERT</span><span class="skill-tag">LSTM · GRU</span>
             <span class="skill-tag">ResNet · EfficientNet</span><span class="skill-tag">Transfer Learning</span>
+            <span class="skill-tag">Fine-tuning</span>
           </div>
         </div>
         <div class="p-card">
@@ -641,6 +653,7 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
             <span class="skill-tag">MLflow</span><span class="skill-tag">FastAPI</span>
             <span class="skill-tag">Docker</span><span class="skill-tag">Streamlit</span>
             <span class="skill-tag">Optuna</span><span class="skill-tag">Azure DevOps</span>
+            <span class="skill-tag">dbt</span><span class="skill-tag">DuckDB</span>
           </div>
         </div>
         <div class="p-card">
@@ -662,7 +675,7 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
           <div class="skill-tags">
             <span class="skill-tag">Python · R · SQL</span>
             <span class="skill-tag">Power BI</span><span class="skill-tag">Plotly</span>
-            <span class="skill-tag">BigQuery · GCP</span><span class="skill-tag">dbt</span>
+            <span class="skill-tag">BigQuery · GCP</span>
           </div>
         </div>
       </div>
@@ -682,12 +695,12 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
     <div class="exp-item">
       <span class="exp-date">Mars – Août 2025</span>
       <div class="exp-body">
-        <h3>Stage de fin d'études — Computer Vision &amp; Generative AI</h3>
+        <h3>Stage de fin d'études · Computer Vision &amp; Generative AI</h3>
         <p class="exp-org">Tiama / Kestrel Vision · Division IA · Île-de-France</p>
         <ul class="exp-ul">
-          <li>Génération synthétique d'images de défauts industriels rares — enrichissement dataset <strong>+58%</strong></li>
-          <li>GAN (inpainting) vs modèle de diffusion — pipeline POC → stabilisation → Optuna → production</li>
-          <li>Résultats : <strong>PSNR +67%</strong>, <strong>FID −94%</strong>, <strong>MAE −98%</strong> · validation t-SNE · intégré en production</li>
+          <li>Génération synthétique d'images de défauts industriels rares, enrichissement dataset <strong>+58%</strong></li>
+          <li>GAN (inpainting) vs modèle de diffusion : pipeline POC → stabilisation → Optuna → production</li>
+          <li>Résultats : <strong>PSNR +67%</strong>, <strong>FID &minus;94%</strong>, <strong>MAE &minus;98%</strong> · validation t-SNE · intégré en production</li>
           <li>Environnement Scrum · TensorBoard · Azure DevOps</li>
         </ul>
         <div class="exp-tags">
@@ -696,7 +709,7 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
           <span class="exp-tag">OpenCV</span><span class="exp-tag">TensorBoard</span><span class="exp-tag">Azure DevOps</span>
         </div>
       </div>
-      <span class="exp-badge">1ère / 19 stagiaires</span>
+      <span></span>
     </div>
 
     <div class="exp-item">
@@ -705,7 +718,7 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
         <h3>Stage en Analyse de Données</h3>
         <p class="exp-org">Ayor Water and Heating Solutions · Marsac</p>
         <ul class="exp-ul">
-          <li>Analyse données clients, ventes et commandes — séries temporelles, tendances</li>
+          <li>Analyse données clients, ventes et commandes : séries temporelles, tendances</li>
           <li>Segmentation K-Means · modélisation prédictive (Random Forest, régression logistique)</li>
           <li>Déploiement de tableaux de bord Power BI pour le suivi des KPIs</li>
         </ul>
@@ -740,13 +753,12 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
 
       <div class="pf-card" data-cat="mlops recsys">
         <div class="pf-img">
-          <div class="pf-img-placeholder">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
+          <img src="assets/img/instacart.png" alt="Interface Streamlit instacart-recsys">
         </div>
         <div class="pf-body">
           <p class="pf-cat">MLOps · RecSys · Projet personnel</p>
-          <h3 class="pf-name">Pipeline MLOps — Recommandation e-commerce (Instacart)</h3>
+          <h3 class="pf-name">Pipeline MLOps · Recommandation e-commerce (Instacart)</h3>
+          <p class="pf-desc">Système de recommandation bout-en-bout sur 32M transactions. Trois modèles (ALS, BPR, EASE), tuning Optuna, tracking MLflow, API FastAPI, interface Streamlit, Docker Compose.</p>
           <p class="pf-metrics">ALS meilleur modèle · Hit Rate @10 : 13.3% → 16.2% (+22%)</p>
           <div class="pf-tags">
             <span class="pf-tag">Python</span><span class="pf-tag">ALS · BPR · EASE</span>
@@ -759,73 +771,69 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
 
       <div class="pf-card" data-cat="vision">
         <div class="pf-img">
-          <div class="pf-img-placeholder">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
+          <img src="assets/img/eolienne.png" alt="Courbes entraînement détection éoliennes" style="object-position: top center;">
         </div>
         <div class="pf-body">
           <p class="pf-cat">Computer Vision · Transfer Learning · Projet académique</p>
           <h3 class="pf-name">Détection d'éoliennes par imagerie satellite</h3>
+          <p class="pf-desc">Comparaison CNN from scratch vs transfer learning sur images satellites. Analyse des performances et vitesses de convergence selon l'architecture.</p>
           <p class="pf-metrics">CNN scratch 95.7% → ResNet50 fine-tuné 98%</p>
           <div class="pf-tags">
             <span class="pf-tag">PyTorch</span><span class="pf-tag">ResNet50</span>
             <span class="pf-tag">EfficientNetB3</span><span class="pf-tag">MobileNetV2</span><span class="pf-tag">OpenCV</span>
           </div>
-          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+
         </div>
       </div>
 
       <div class="pf-card" data-cat="nlp">
         <div class="pf-img">
-          <div class="pf-img-placeholder">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
+          <img src="assets/img/nlp.png" alt="Comparaison temps entraînement RNN LSTM GRU" style="object-position: top center;">
         </div>
         <div class="pf-body">
           <p class="pf-cat">NLP · Deep Learning · Projet académique</p>
-          <h3 class="pf-name">Classification de texte — RNN / LSTM / GRU</h3>
+          <h3 class="pf-name">Classification de texte · RNN / LSTM / GRU</h3>
+          <p class="pf-desc">Comparaison de trois architectures récurrentes sur AG_NEWS (4 catégories). Analyse des performances, convergence et capacités de généralisation.</p>
           <p class="pf-metrics">AG_NEWS · 4 catégories · Comparaison architectures</p>
           <div class="pf-tags">
             <span class="pf-tag">PyTorch</span><span class="pf-tag">RNN</span>
             <span class="pf-tag">LSTM</span><span class="pf-tag">GRU</span>
           </div>
-          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+
         </div>
       </div>
 
       <div class="pf-card" data-cat="stats">
         <div class="pf-img">
-          <div class="pf-img-placeholder">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
+          <img src="assets/img/meteo.png" alt="Graphe communautés stations météorologiques">
         </div>
         <div class="pf-body">
           <p class="pf-cat">Stats · Graphes · Projet académique</p>
           <h3 class="pf-name">Inférence de réseaux entre stations météorologiques</h3>
+          <p class="pf-desc">Analyse des dépendances temporelles et conditionnelles sur 262 stations : corrélations brutes, Graphical LASSO, détection de communautés climatiques (Louvain), visualisation cartographique.</p>
           <p class="pf-metrics">262 stations · Graphical LASSO · Communautés Louvain</p>
           <div class="pf-tags">
             <span class="pf-tag">R</span><span class="pf-tag">igraph</span>
             <span class="pf-tag">GLASSO</span><span class="pf-tag">ggplot2</span><span class="pf-tag">leaflet</span>
           </div>
-          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+
         </div>
       </div>
 
       <div class="pf-card" data-cat="recsys">
         <div class="pf-img">
-          <div class="pf-img-placeholder">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </div>
+          <img src="assets/img/carrefour.png" alt="Leaderboard Carrefour AI Challenge" style="object-position: top center;">
         </div>
         <div class="pf-body">
-          <p class="pf-cat">RecSys · Compétition</p>
-          <h3 class="pf-name">Carrefour AI Challenge — Recommandation</h3>
-          <p class="pf-metrics">Hit Rate @10 : 0.377 · Double approche</p>
+          <p class="pf-cat">RecSys · Compétition · Kaggle</p>
+          <h3 class="pf-name">Carrefour AI Challenge · Prédiction de réachat de produits</h3>
+          <p class="pf-desc">Prédire les produits que des clients Carrefour vont racheter à partir de leur historique d'achats. Double approche : modèle heuristique pondéré (fréquence, récence, popularité) et réseau de neurones.</p>
+          <p class="pf-metrics">Top 10 / 42 équipes · Score 0.377 · Hit Rate @10</p>
           <div class="pf-tags">
             <span class="pf-tag">Python</span><span class="pf-tag">PyTorch</span>
             <span class="pf-tag">Filtrage collaboratif</span><span class="pf-tag">Pandas</span>
           </div>
-          <a href="https://github.com/Fama05-afk" target="_blank" class="pf-link">GitHub &rarr;</a>
+
         </div>
       </div>
 
@@ -859,7 +867,7 @@ footer span { font-size: .56rem; letter-spacing: .16em; text-transform: uppercas
 <section id="contact">
   <div class="contact-grid">
     <div class="contact-left">
-      <h2>Travaillons<br>ensemble.</h2>
+      <h2>Say hello.</h2>
       <p>Ouverte aux opportunités en Data Science et ML Engineering. Mobile toute la France.</p>
     </div>
     <div class="contact-links">
